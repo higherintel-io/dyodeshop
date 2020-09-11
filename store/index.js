@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import pathify from 'vuex-pathify'
+import topAnnoucementBar from './topAnnoucementBar'
+import MainNavigation from './MainNavigation'
 import { auth } from '~/plugins/firebase.js'
 
 export const strict = false
@@ -9,8 +11,13 @@ const createStore = () => {
   return new Vuex.Store({
     plugins: [pathify.plugin],
     state: () => ({
-      user: null
+      user: null,
+      isAdmin: true
     }),
+    modules: {
+      topAnnoucementBar,
+      MainNavigation
+    },
     mutations: {
       SET_USER (state, user) {
         state.user = user
