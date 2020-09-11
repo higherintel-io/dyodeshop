@@ -37,6 +37,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '~/plugins/firebase.js', ssr: false },
+    { src: '~/plugins/localstorage.js', ssr: false }
   ],
   /*
   ** Auto import components
@@ -78,7 +80,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -97,5 +99,8 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    babel: {
+      configFile: './babel.config.js'
+    }
   }
 }
