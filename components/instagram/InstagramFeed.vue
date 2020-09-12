@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ComponentSettingsHeader />
+    <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-card
       tile
       flat
@@ -23,7 +23,7 @@
         </v-col>
       </v-row>
     </v-card>
-    <SettingsModifier>
+    <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
       <v-text-field
         v-model="instagramUsername"
         outlined
@@ -45,9 +45,13 @@ import { sync, get } from 'vuex-pathify'
 export default {
   name: 'InstagramFeed',
   computed: {
+    isAdmin: get('isAdmin'),
     headline: sync('instagramFeed/headline'),
     instagramUsername: sync('instagramFeed/instagramUsername'),
     posts: get('instagramFeed/posts')
+  },
+  mounted () {
+
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ComponentSettingsHeader v-if="isAdmin" />
+    <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-row
       align="center"
       justify="center"
@@ -14,7 +14,7 @@
       </p>
     </v-row>
 
-    <SettingsModifier v-if="isAdmin">
+    <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
       <v-text-field
         v-model="backgroundColor"
         background-color="white"

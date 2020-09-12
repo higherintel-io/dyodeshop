@@ -1,12 +1,14 @@
 <template>
-  <div>
+  <div style="width:100%;">
     <v-app-bar
       :color="backgroundColor"
       :height="height"
     >
       <v-app-bar-nav-icon />
 
-      <v-toolbar-title>Logo</v-toolbar-title>
+      <v-toolbar-title>
+        <img src="https://res.cloudinary.com/higherintel/image/upload/v1599932929/dyode/logo.png">
+      </v-toolbar-title>
 
       <v-spacer />
 
@@ -24,7 +26,7 @@
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
-    <SettingsModifier v-if="isAdmin">
+    <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
       <v-text-field
         v-model="backgroundColor"
         background-color="white"

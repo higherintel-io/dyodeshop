@@ -2,6 +2,13 @@
   <v-container>
     <v-row>
       <h1>{{ welcomeMessage }} <span v-if="user && user.email">{{ user.email }}</span></h1>
+      <v-spacer />
+      <v-btn
+        color="primary"
+        to="/"
+      >
+        View frontend
+      </v-btn>
     </v-row>
     <template>
       <v-expansion-panels class="mt-4">
@@ -27,14 +34,16 @@
 import { get } from 'vuex-pathify'
 export default {
   name: 'StoreManager',
+  layout: 'admin',
   components: {
     TopAnnoucementBar: () => import('@/components/header/TopAnnoucementBar'),
     MainNavigation: () => import('@/components/header/MainNavigation'),
     HeroBanner: () => import('@/components/banners/HeroBanner'),
-    FeaturedItems: () => import('@/components/featured-block/featuredItems'),
+    FeaturedItems: () => import('@/components/featured-block/FeaturedItems'),
     CallToActionItems: () => import('@/components/call-to-action-items/CallToActionItems'),
     HeroBannerBottom: () => import('@/components/banners/HeroBannerBottom'),
-    InstagramFeed: () => import('@/components/instagram/InstagramFeed')
+    InstagramFeed: () => import('@/components/instagram/InstagramFeed'),
+    FooterNewsletter: () => import('@/components/footer/FooterNewsletter')
   },
   data () {
     return {
@@ -67,6 +76,10 @@ export default {
         {
           component: 'InstagramFeed',
           name: 'Instagram Feed'
+        },
+        {
+          component: 'FooterNewsletter',
+          name: 'Footer newsletter section'
         }
       ]
     }

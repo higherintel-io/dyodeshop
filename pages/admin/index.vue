@@ -67,6 +67,7 @@
 <script>
 export default {
   name: 'LoginPage',
+  layout: 'admin',
   data () {
     return {
       email: '',

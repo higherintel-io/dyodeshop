@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <ComponentSettingsHeader />
+  <div style="width:100%;">
+    <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-card
       flat
       tile
@@ -23,7 +23,7 @@
         </v-col>
       </v-img>
     </v-card>
-    <SettingsModifier>
+    <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
       <v-text-field
         v-model="title"
         background-color="white"
@@ -59,10 +59,11 @@
 </template>
 
 <script>
-import { sync } from 'vuex-pathify'
+import { sync, get } from 'vuex-pathify'
 export default {
   name: 'HeroBanner',
   computed: {
+    isAdmin: get('isAdmin'),
     title: sync('heroBanner/title'),
     tagline: sync('heroBanner/tagline'),
     backgroundImage: sync('heroBanner/backgroundImage'),

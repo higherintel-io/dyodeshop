@@ -1,10 +1,10 @@
 <template>
   <div>
-    <ComponentSettingsHeader />
+    <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-sheet
       class="mx-auto"
       elevation="8"
-      max-width="1000"
+      max-width="100%"
     >
       <v-card-title class="d-block text-center">
         <h2>{{ title }}</h2>
@@ -19,7 +19,6 @@
             flat
             class="ma-4"
             width="200"
-            @click="toggle"
           >
             <v-row
               class="fill-height"
@@ -49,8 +48,9 @@
 <script>
 import { sync, get } from 'vuex-pathify'
 export default {
-  name: 'FeaturedItems',
+  name: 'FeaturedItemsComponent',
   computed: {
+    isAdmin: get('isAdmin'),
     title: sync('featuredItems/title'),
     products: get('featuredItems/products')
   }

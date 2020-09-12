@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <ComponentSettingsHeader v-if="isAdmin" />
+  <div class="container">
+    <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-row
       align="center"
       justify="center"
@@ -18,7 +18,7 @@
         />
       </v-col>
     </v-row>
-    <SettingsModifier>
+    <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
       <v-text-field
         v-model="buttonBackgroundColor"
         outlined
@@ -40,6 +40,7 @@ import { get, sync } from 'vuex-pathify'
 export default {
   name: 'CtaItems',
   computed: {
+    isAdmin: get('isAdmin'),
     ctas: get('callToActionItems/ctas'),
     buttonBackgroundColor: sync('callToActionItems/ctaLinkBackgroundColor'),
     ctaFontColor: sync('callToActionItems/ctaFontColor')

@@ -1,6 +1,5 @@
 <template>
   <v-app dark>
-    <TopAnnoucementBar />
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -25,8 +24,6 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-
-    <MainNavigation />
     <v-main>
       <nuxt />
     </v-main>
