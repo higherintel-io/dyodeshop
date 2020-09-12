@@ -5,21 +5,27 @@
     </v-card-title>
     <v-card-text>
       <v-row>
-        <v-text-field
-          v-model="clientId"
-          outlined
-          label="BigCommerce Client ID"
-        />
-        <v-text-field
-          v-model="authToken"
-          outlined
-          label="BigCommerce Auth Token"
-        />
-        <v-text-field
-          v-model="storeHash"
-          outlined
-          label="BigCommerce Store hash"
-        />
+        <v-col cols="12">
+          <v-text-field
+            v-model="clientId"
+            outlined
+            label="BigCommerce Client ID"
+          />
+        </v-col>
+        <v-col cols="12">
+          <v-text-field
+            v-model="authToken"
+            outlined
+            label="BigCommerce Auth Token"
+          />
+        </v-col>
+        <v-col cols="12">
+          <v-text-field
+            v-model="storeHash"
+            outlined
+            label="BigCommerce Store hash"
+          />
+        </v-col>
       </v-row>
     </v-card-text>
   </v-card>

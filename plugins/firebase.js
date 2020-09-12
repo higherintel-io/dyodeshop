@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import 'firebase/firestore'
 
 const config = {
   apiKey: 'AIzaSyBCqqK7VmbWzkt5gf9JcIi_cX3fP71GCY4',
@@ -14,6 +15,6 @@ const config = {
 
 // eslint-disable-next-line no-unused-expressions
 !firebase.apps.length ? firebase.initializeApp(config) : ''
-
+export const DB = firebase.firestore()
 export const auth = firebase.auth()
 export default firebase

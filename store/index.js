@@ -14,7 +14,9 @@ import bcSettings from './bcSettings'
 import { auth } from '~/plugins/firebase.js'
 
 export const strict = false
-
+function capitalizeFirstLetter (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
 const createStore = () => {
   return new Vuex.Store({
     plugins: [pathify.plugin],
@@ -40,6 +42,73 @@ const createStore = () => {
       }
     },
     actions: {
+      // eslint-disable-next-line require-await
+      async getDesignSettings ({ dispatch, commit, state }) {
+        const self = this
+        const settingsData = Object.entries(state).flatMap((i) => {
+          const newObject = {}
+          newObject.name = i[0]
+          newObject.data = i[1]
+          return newObject
+        })
+
+        try {
+          await settingsData.forEach(async (setting) => {
+          // remove user and isAdmin as these dont need to be stored in database
+            if (setting.name === 'user' || setting.name === 'isAdmin') { return }
+
+            // get all the users design settings from database and add them to the store
+            const collection = await self.$firestore
+              .collection('stores')
+              .doc(this.get('user').uid)
+              .collection(setting.name)
+              .doc(setting.name)
+            const componentSettings = await collection.get()
+            const allComponentSettings = componentSettings.data()
+            if (allComponentSettings) {
+              const storeName = allComponentSettings.name
+              const dispatchString = `${storeName}`
+              for (const [key, value] of Object.entries(allComponentSettings.data)) {
+                const moduleToDispatch = `${dispatchString}/set${capitalizeFirstLetter(key)}`
+                dispatch(moduleToDispatch, value)
+              }
+            }
+          })
+        } catch (error) {
+          throw new Error('An Error Ocurred: ', error)
+        }
+      },
+      async saveDesignSettings ({ dispatch, state }) {
+        const self = this
+        // get all of the vuex modules from the state object and pass them into firebase
+        const settingsData = Object.entries(state).flatMap((i) => {
+          const newObject = {}
+          newObject.name = i[0]
+          newObject.data = i[1]
+          return newObject
+        })
+        await settingsData.forEach(async (setting) => {
+          // remove user and isAdmin as these dont need to be stored in database
+          if (setting.name === 'user' || setting.name === 'isAdmin') { return }
+          await self.$firestore
+            .collection('stores')
+            .doc(this.get('user').uid)
+            .collection(setting.name)
+            .doc(setting.name)
+            .set({
+              ...setting,
+              updatedAt: new Date()
+            })
+            .then((ref) => {
+              return ref
+            })
+            .catch((error) => {
+              throw new Error('An Error Occured: ', error)
+            })
+        })
+        await dispatch('getDesignSettings')
+      },
+
       async logout ({ commit }) {
         await auth.signOut()
         commit('SET_USER', null)

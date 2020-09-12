@@ -38,7 +38,11 @@ export default {
   */
   plugins: [
     { src: '~/plugins/firebase.js', ssr: false },
-    { src: '~/plugins/localstorage.js', ssr: false }
+    { src: '~/plugins/localstorage.js', ssr: false },
+    {
+      src: '~/plugins/firestore.js',
+      ssr: false
+    }
   ],
   /*
   ** Auto import components

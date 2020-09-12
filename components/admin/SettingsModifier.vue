@@ -22,6 +22,7 @@
           <v-btn
             color="primary"
             outlined
+            @click="saveDesignSettings"
           >
             Save Changes
           </v-btn>
@@ -42,6 +43,11 @@ export default {
     fields: {
       type: Array,
       default: () => []
+    }
+  },
+  methods: {
+    async saveDesignSettings () {
+      await this.$store.dispatch('saveDesignSettings', this.$store.get('featuredItems'))
     }
   }
 }
