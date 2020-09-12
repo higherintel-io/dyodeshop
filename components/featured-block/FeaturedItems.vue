@@ -3,8 +3,8 @@
     <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-sheet
       class="mx-auto"
-      elevation="8"
-      max-width="100%"
+      elevation="0"
+      max-width="1000"
     >
       <v-card-title class="d-block text-center">
         <h2>{{ title }}</h2>
