@@ -7,8 +7,6 @@
     <CallToActionItems />
     <FeaturedItems />
     <HeroBannerBottom />
-    <InstagramFeed />
-    <FooterNewsletter />
   </v-container>
 </template>
 

@@ -1,22 +1,22 @@
 import { make } from 'vuex-pathify'
 
-const state = {
+const state = () => ({
   title: 'New Arrivals',
   products: [
     {
-      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.png',
+      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.webp',
       name: 'product title',
       shortDesc: 'Womans t-shirt',
       price: '19.99'
     },
     {
-      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.png',
+      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.webp',
       name: 'product title',
       shortDesc: 'Womans t-shirt',
       price: '19.99'
     },
     {
-      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.png',
+      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.webp',
       name: 'product title',
       shortDesc: 'Womans t-shirt',
       price: '19.99'
@@ -41,7 +41,7 @@ const state = {
     }
   ]
 
-}
+})
 
 const mutations = make.mutations(state)
 

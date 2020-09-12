@@ -43,7 +43,8 @@ export default {
     CallToActionItems: () => import('@/components/call-to-action-items/CallToActionItems'),
     HeroBannerBottom: () => import('@/components/banners/HeroBannerBottom'),
     InstagramFeed: () => import('@/components/instagram/InstagramFeed'),
-    FooterNewsletter: () => import('@/components/footer/FooterNewsletter')
+    FooterNewsletter: () => import('@/components/footer/FooterNewsletter'),
+    MainFooter: () => import('@/components/footer/MainFooter')
   },
   data () {
     return {
@@ -80,6 +81,10 @@ export default {
         {
           component: 'FooterNewsletter',
           name: 'Footer newsletter section'
+        },
+        {
+          component: 'MainFooter',
+          name: 'Main footer section'
         }
       ]
     }

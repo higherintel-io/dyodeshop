@@ -47,12 +47,9 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-footer
-      :absolute="!fixed"
-      app
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    <InstagramFeed />
+    <FooterNewsletter />
+    <MainFooter />
   </v-app>
 </template>
 

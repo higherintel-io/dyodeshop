@@ -1,6 +1,6 @@
 import { make } from 'vuex-pathify'
 
-const state = {
+const state = () => ({
   instagramUsername: 'qdhenry',
   headline: 'Follow us on instagram!',
   posts: [
@@ -21,7 +21,7 @@ const state = {
     }
   ]
 
-}
+})
 
 const mutations = make.mutations(state)
 

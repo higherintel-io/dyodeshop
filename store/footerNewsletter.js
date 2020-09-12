@@ -1,6 +1,6 @@
 import { make } from 'vuex-pathify'
 
-const state = {
+const state = () => ({
   headline: 'Signup and Stay Connected',
   bodyText: 'Sign up for the newsletter and get 20% off! Gain access to exclusive offers and be the first to know when new stuff drops!',
   bodyTextColor: '#fff',
@@ -10,7 +10,7 @@ const state = {
   buttonTextColor: '#fff',
   placeholderText: 'Your email address'
 
-}
+})
 
 const mutations = make.mutations(state)
 

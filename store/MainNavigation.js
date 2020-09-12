@@ -1,12 +1,12 @@
 import { make } from 'vuex-pathify'
 
-const state = {
+const state = () => ({
   height: 59,
   backgroundColor: '#10504F',
   textColor: '#fff',
   logo: '',
   links: ['womans', 'mens', 'accessories', 'sale!']
-}
+})
 
 const mutations = make.mutations(state)
 

@@ -9,6 +9,7 @@ import callToActionItems from './callToActionItems'
 import instagramFeed from './instagramFeed'
 import featuredItems from './featuredItems'
 import footerNewsletter from './footerNewsletter'
+import footerMain from './footerMain'
 import { auth } from '~/plugins/firebase.js'
 
 export const strict = false
@@ -28,7 +29,8 @@ const createStore = () => {
       heroBanner,
       heroBannerBottom,
       callToActionItems,
-      footerNewsletter
+      footerNewsletter,
+      footerMain
     },
     mutations: {
       SET_USER (state, user) {

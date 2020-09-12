@@ -1,6 +1,6 @@
 import { make } from 'vuex-pathify'
 
-const state = {
+const state = () => ({
   title: 'Title Goes Here',
   tagline: 'Tagline goes here',
   backgroundImage: 'https://res.cloudinary.com/higherintel/image/upload/v1599867755/dyode/Hero_Image_1.webp',
@@ -8,7 +8,7 @@ const state = {
   buttonBackgroundColor: '#000',
   buttonTextColor: '#fff'
 
-}
+})
 
 const mutations = make.mutations(state)
 
