@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import pathify from 'vuex-pathify'
 import topAnnoucementBar from './topAnnoucementBar'
 import MainNavigation from './MainNavigation'
+import heroBanner from './heroBanner'
 import { auth } from '~/plugins/firebase.js'
 
 export const strict = false
@@ -16,7 +17,8 @@ const createStore = () => {
     }),
     modules: {
       topAnnoucementBar,
-      MainNavigation
+      MainNavigation,
+      heroBanner
     },
     mutations: {
       SET_USER (state, user) {

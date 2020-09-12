@@ -29,7 +29,8 @@ export default {
   name: 'StoreManager',
   components: {
     TopAnnoucementBar: () => import('@/components/header/TopAnnoucementBar'),
-    MainNavigation: () => import('@/components/header/MainNavigation')
+    MainNavigation: () => import('@/components/header/MainNavigation'),
+    HeroBanner: () => import('@/components/banners/HeroBanner')
   },
   data () {
     return {
@@ -42,6 +43,10 @@ export default {
         {
           component: 'MainNavigation',
           name: 'Main navigation settings'
+        },
+        {
+          component: 'HeroBanner',
+          name: 'Hero Banner'
         }
       ]
     }
