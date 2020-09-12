@@ -27,6 +27,11 @@
         </v-expansion-panel>
       </v-expansion-panels>
     </template>
+    <v-row>
+      <v-col cols="12">
+        <BcSettings />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 

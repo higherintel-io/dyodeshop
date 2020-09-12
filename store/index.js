@@ -10,6 +10,7 @@ import instagramFeed from './instagramFeed'
 import featuredItems from './featuredItems'
 import footerNewsletter from './footerNewsletter'
 import footerMain from './footerMain'
+import bcSettings from './bcSettings'
 import { auth } from '~/plugins/firebase.js'
 
 export const strict = false
@@ -22,6 +23,7 @@ const createStore = () => {
       isAdmin: true
     }),
     modules: {
+      bcSettings,
       instagramFeed,
       featuredItems,
       topAnnoucementBar,
