@@ -4,6 +4,10 @@ import pathify from 'vuex-pathify'
 import topAnnoucementBar from './topAnnoucementBar'
 import MainNavigation from './MainNavigation'
 import heroBanner from './heroBanner'
+import heroBannerBottom from './heroBannerBottom'
+import callToActionItems from './callToActionItems'
+import instagramFeed from './instagramFeed'
+import featuredItems from './featuredItems'
 import { auth } from '~/plugins/firebase.js'
 
 export const strict = false
@@ -16,9 +20,13 @@ const createStore = () => {
       isAdmin: true
     }),
     modules: {
+      instagramFeed,
+      featuredItems,
       topAnnoucementBar,
       MainNavigation,
-      heroBanner
+      heroBanner,
+      heroBannerBottom,
+      callToActionItems
     },
     mutations: {
       SET_USER (state, user) {

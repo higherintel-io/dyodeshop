@@ -30,7 +30,11 @@ export default {
   components: {
     TopAnnoucementBar: () => import('@/components/header/TopAnnoucementBar'),
     MainNavigation: () => import('@/components/header/MainNavigation'),
-    HeroBanner: () => import('@/components/banners/HeroBanner')
+    HeroBanner: () => import('@/components/banners/HeroBanner'),
+    FeaturedItems: () => import('@/components/featured-block/featuredItems'),
+    CallToActionItems: () => import('@/components/call-to-action-items/CallToActionItems'),
+    HeroBannerBottom: () => import('@/components/banners/HeroBannerBottom'),
+    InstagramFeed: () => import('@/components/instagram/InstagramFeed')
   },
   data () {
     return {
@@ -38,15 +42,31 @@ export default {
       components: [
         {
           component: 'TopAnnoucementBar',
-          name: 'Top annoucement bar settings'
+          name: 'Top annoucement bar'
         },
         {
           component: 'MainNavigation',
-          name: 'Main navigation settings'
+          name: 'Main navigation'
         },
         {
           component: 'HeroBanner',
           name: 'Hero Banner'
+        },
+        {
+          component: 'CallToActionItems',
+          name: 'Call To Action Items'
+        },
+        {
+          component: 'FeaturedItems',
+          name: 'Featured Items'
+        },
+        {
+          component: 'HeroBannerBottom',
+          name: 'Bottom Hero Banner'
+        },
+        {
+          component: 'InstagramFeed',
+          name: 'Instagram Feed'
         }
       ]
     }
