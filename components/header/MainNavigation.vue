@@ -7,7 +7,9 @@
       <v-app-bar-nav-icon />
 
       <v-toolbar-title>
-        <img src="https://res.cloudinary.com/higherintel/image/upload/v1599932929/dyode/logo.png">
+        <nuxt-link to="/">
+          <img src="https://res.cloudinary.com/higherintel/image/upload/v1599932929/dyode/logo.png">
+        </nuxt-link>
       </v-toolbar-title>
 
       <v-spacer />
@@ -19,6 +21,7 @@
           text
           class="overline font-weight-black"
           exact
+          :to="`/shop/${n}`"
           nuxt
           :color="textColor"
         >

@@ -22,11 +22,13 @@
                   :style="{color: bodyTextColor}"
                   style="list-style:none"
                 >
-                  <a
-                    :href="`/pages/${link}`"
+                  <nuxt-link
+                    :to="link"
                     style="text-decoration:none"
                     :style="{color: bodyTextColor}"
-                  >{{ link }}</a>
+                  >
+                    {{ link }}
+                  </nuxt-link>
                 </li>
               </ul>
             </v-col>
@@ -44,11 +46,13 @@
                   :style="{color: bodyTextColor}"
                   style="list-style:none"
                 >
-                  <a
-                    :href="`/pages/${link}`"
+                  <nuxt-link
+                    :to="link"
                     style="text-decoration:none"
                     :style="{color: bodyTextColor}"
-                  >{{ link }}</a>
+                  >
+                    {{ link }}
+                  </nuxt-link>
                 </li>
               </ul>
             </v-col>
