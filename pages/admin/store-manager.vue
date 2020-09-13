@@ -51,6 +51,12 @@ export default {
     FooterNewsletter: () => import('@/components/footer/FooterNewsletter'),
     MainFooter: () => import('@/components/footer/MainFooter')
   },
+  middleware ({ store, redirect }) {
+    const user = store.get('user')
+    if (!user) {
+      redirect('/admin')
+    }
+  },
   data () {
     return {
       welcomeMessage: 'Shop Manager',
