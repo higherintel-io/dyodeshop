@@ -14,7 +14,9 @@
           >
             <v-col cols="12">
               <h1>{{ title }}</h1>
-              <h2>{{ tagline }}</h2>
+              <h2 class="hero-tagline">
+                {{ tagline }}
+              </h2>
               <v-btn :color="buttonBackgroundColor">
                 <span :style="{color: `${buttonTextColor}`}">{{ buttonText }}</span>
               </v-btn>

@@ -83,3 +83,25 @@ export default {
   }
 }
 </script>
+<style>
+h1,
+h2,
+.v-application .headline {
+  font-family: "Pacifico", cursive !important;
+}
+button.v-btn.v-btn--block.v-btn--depressed.v-btn--flat.v-btn--outlined.v-btn--tile.theme--light.v-size--default {
+  font-family: "Pacifico", cursive;
+  text-transform: capitalize;
+}
+
+.theme--light.v-btn,
+.application body,
+a,
+p {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300 !important;
+}
+body .v-application h2.hero-tagline {
+  font-family: "Lato", sans-serif !important;
+}
+</style>

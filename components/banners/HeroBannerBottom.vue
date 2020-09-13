@@ -16,7 +16,10 @@
               <h1 :style="{color: `${textColor}`}">
                 {{ title }}
               </h1>
-              <h2 :style="{color: `${textColor}`}">
+              <h2
+                :style="{color: `${textColor}`}"
+                class="hero-tagline"
+              >
                 {{ tagline }}
               </h2>
               <v-btn :color="buttonBackgroundColor">

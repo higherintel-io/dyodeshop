@@ -67,4 +67,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-toolbar__title img {
+  width: 55px;
+  margin-top: 7px;
+}
 </style>
