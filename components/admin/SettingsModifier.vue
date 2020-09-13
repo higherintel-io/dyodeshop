@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     async saveDesignSettings () {
-      await this.$store.dispatch('saveDesignSettings', this.$store.get('featuredItems'))
+      await this.$store.dispatch('saveDesignSettings')
     }
   }
 }

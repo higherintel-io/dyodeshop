@@ -5,7 +5,7 @@ export default {
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
-  mode: 'spa',
+  ssr: false,
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -65,7 +65,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
+    '@nuxt/content',
+    'nuxt-spa-store-init'
   ],
   /*
   ** Axios module configuration
@@ -106,5 +107,12 @@ export default {
     babel: {
       configFile: './babel.config.js'
     }
+  },
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
+    baseDomain: process.env.BASE_DOMAIN || 'localhost:3000'
+  },
+  privateRuntimeConfig: {
+    // apiSecret: process.env.API_SECRET
   }
 }

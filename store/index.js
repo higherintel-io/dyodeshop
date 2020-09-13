@@ -60,7 +60,7 @@ const createStore = () => {
             // get all the users design settings from database and add them to the store
             const collection = await self.$firestore
               .collection('stores')
-              .doc(this.get('user').uid)
+              .doc(this.$config.baseDomain)
               .collection(setting.name)
               .doc(setting.name)
             const componentSettings = await collection.get()
@@ -72,6 +72,8 @@ const createStore = () => {
                 const moduleToDispatch = `${dispatchString}/set${capitalizeFirstLetter(key)}`
                 dispatch(moduleToDispatch, value)
               }
+            } else {
+              return false
             }
           })
         } catch (error) {
@@ -92,11 +94,12 @@ const createStore = () => {
           if (setting.name === 'user' || setting.name === 'isAdmin') { return }
           await self.$firestore
             .collection('stores')
-            .doc(this.get('user').uid)
+            .doc(this.$config.baseDomain)
             .collection(setting.name)
             .doc(setting.name)
             .set({
               ...setting,
+              owner: this.get('user').uid,
               updatedAt: new Date()
             })
             .then((ref) => {
@@ -131,6 +134,11 @@ const createStore = () => {
             throw new Error('An Error Ocurred: ', error)
           }
         }
+      },
+      // eslint-disable-next-line require-await
+      async nuxtServerInit ({ commit, dispatch, state }) {
+
+        // await dispatch('getDesignSettings')
       }
     }
   })

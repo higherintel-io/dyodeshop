@@ -55,8 +55,8 @@
 
 <script>
 export default {
-  components: {
-
+  async middleware ({ store, app }) {
+    await store.dispatch('getDesignSettings')
   },
   data () {
     return {

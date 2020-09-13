@@ -16,3 +16,6 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
+### Configuration
+
+Add your base domain and url to the .env file (the base domain (raw domain without http:// or https://) will be used to identify the design settings to read from firestore database)
