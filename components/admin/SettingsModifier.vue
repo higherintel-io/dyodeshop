@@ -22,6 +22,7 @@
           <v-btn
             color="primary"
             outlined
+            :loading="savingChanges"
             @click="saveDesignSettings"
           >
             Save Changes
@@ -45,9 +46,18 @@ export default {
       default: () => []
     }
   },
+  data () {
+    return {
+      savingChanges: false
+    }
+  },
   methods: {
     async saveDesignSettings () {
+      this.savingChanges = true
       await this.$store.dispatch('saveDesignSettings')
+      setTimeout(() => {
+        this.savingChanges = false
+      }, 1000)
     }
   }
 }

@@ -1,7 +1,12 @@
 <template>
-  <v-card>
+  <v-card
+    flat
+    tile
+  >
     <v-card-title>
-      <h3>BigCommerce connection settings</h3>
+      <h3 class="overline">
+        Store connection settings
+      </h3>
     </v-card-title>
     <v-card-text>
       <v-row>

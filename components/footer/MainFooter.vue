@@ -72,6 +72,12 @@
             </li>
           </v-row>
         </v-col>
+        <nuxt-link
+          to="/admin/store-manager"
+          style="text-decoration:none"
+        >
+          Site Manager
+        </nuxt-link>
       </v-row>
     </v-footer>
     <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">

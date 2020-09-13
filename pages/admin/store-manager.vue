@@ -1,7 +1,9 @@
 <template>
   <v-container>
-    <v-row>
-      <h1>{{ welcomeMessage }} <span v-if="user && user.email">{{ user.email }}</span></h1>
+    <v-row class="mb-10">
+      <h1 class="overline">
+        {{ welcomeMessage }} <span v-if="user && user.email">{{ user.email }}</span>
+      </h1>
       <v-spacer />
       <v-btn
         color="primary"
@@ -9,15 +11,27 @@
       >
         View frontend
       </v-btn>
+      <v-btn
+        class="ml-5"
+        color="secondary"
+        @click="logout"
+      >
+        Logout
+      </v-btn>
     </v-row>
     <template>
-      <v-expansion-panels class="mt-4">
+      <v-expansion-panels
+        class="mt-4"
+        accordian
+      >
         <v-expansion-panel
           v-for="component in components"
           :key="component.component"
         >
           <v-expansion-panel-header>
-            <h2>{{ component.name }}</h2>
+            <h2 class="overline">
+              {{ component.name }}
+            </h2>
           </v-expansion-panel-header>
           <v-expansion-panel-content>
             <v-container>
@@ -28,7 +42,10 @@
       </v-expansion-panels>
     </template>
     <v-row>
-      <v-col cols="12">
+      <v-col
+        cols="12"
+        class="mt-10"
+      >
         <BcSettings />
       </v-col>
     </v-row>
@@ -63,45 +80,51 @@ export default {
       components: [
         {
           component: 'TopAnnoucementBar',
-          name: 'Top annoucement bar'
+          name: '(Global) Top annoucement bar '
         },
         {
           component: 'MainNavigation',
-          name: 'Main navigation'
+          name: '(Global) Main navigation'
         },
         {
           component: 'HeroBanner',
-          name: 'Hero Banner'
+          name: '(Home) Hero Banner'
         },
         {
           component: 'CallToActionItems',
-          name: 'Call To Action Items'
+          name: '(Home) Call To Action Items'
         },
         {
           component: 'FeaturedItems',
-          name: 'Featured Items'
+          name: '(Home) Featured Items'
         },
         {
           component: 'HeroBannerBottom',
-          name: 'Bottom Hero Banner'
+          name: '(Home) Bottom Hero Banner'
         },
         {
           component: 'InstagramFeed',
-          name: 'Instagram Feed'
+          name: '(Global) Instagram Feed'
         },
         {
           component: 'FooterNewsletter',
-          name: 'Footer newsletter section'
+          name: '(Global) Footer newsletter section'
         },
         {
           component: 'MainFooter',
-          name: 'Main footer section'
+          name: '(Global) Main footer section'
         }
       ]
     }
   },
   computed: {
     user: get('user')
+  },
+  methods: {
+    async logout () {
+      await this.$store.dispatch('logout')
+      this.$router.push('/')
+    }
   }
 }
 </script>
