@@ -23,7 +23,7 @@
                   style="list-style:none"
                 >
                   <nuxt-link
-                    :to="link"
+                    :to="`/pages/${link}`"
                     style="text-decoration:none"
                     :style="{color: bodyTextColor}"
                   >
@@ -47,7 +47,7 @@
                   style="list-style:none"
                 >
                   <nuxt-link
-                    :to="link"
+                    :to="`/pages/${link}`"
                     style="text-decoration:none"
                     :style="{color: bodyTextColor}"
                   >
