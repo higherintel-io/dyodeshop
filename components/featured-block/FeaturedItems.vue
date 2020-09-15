@@ -18,7 +18,7 @@
           <v-card
             flat
             class="ma-4"
-            width="200"
+            :width="$vuetify.breakpoint.smAndUp ? 200 : 140"
           >
             <v-row
               class="fill-height"

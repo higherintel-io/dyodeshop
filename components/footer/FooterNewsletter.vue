@@ -13,9 +13,15 @@
         class="px-6"
       >
         <h2
-          class="text-center"
+          class="text-center d-flex align-center justify-center"
           :style="{color: bodyTextColor}"
         >
+          <img
+            class="mr-2"
+            width="36"
+            height="36"
+            src="https://res.cloudinary.com/higherintel/image/upload/v1600190101/dyode/mail-icon.png"
+          >
           {{ headline }}
         </h2>
         <v-row
@@ -136,5 +142,8 @@ export default {
 .v-input__slot {
   box-shadow: none !important;
   border-radius: 0px !important;
+}
+button.v-btn.v-btn--block.v-btn--depressed.v-btn--flat.v-btn--outlined.v-btn--tile.theme--light.v-size--default {
+  font-family: "Pacifico", cursive !important;
 }
 </style>

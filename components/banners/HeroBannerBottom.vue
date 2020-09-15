@@ -15,7 +15,10 @@
             justify="end"
             style="min-height:400px;max-width:100%"
           >
-            <v-col cols="4">
+            <v-col
+              cols="8"
+              md="4"
+            >
               <h1 :style="{color: `${textColor}`}">
                 {{ title }}
               </h1>

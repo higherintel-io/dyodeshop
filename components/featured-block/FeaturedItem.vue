@@ -1,6 +1,9 @@
 <template>
   <div>
-    <v-img :src="product.image" />
+    <v-img
+      :src="product.image"
+      :width="$vuetify.breakpoint.smAndUp ? 200 : 160"
+    />
     <v-card-text class="pa-0">
       <v-row
         align="center"

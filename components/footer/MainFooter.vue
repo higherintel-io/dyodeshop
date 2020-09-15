@@ -30,7 +30,7 @@
                     style="text-decoration:none"
                     :style="{color: bodyTextColor}"
                   >
-                    {{ link }}
+                    <span class="text-capitalize">{{ link.replace(/[-]/g, ' ') }}</span>
                   </nuxt-link>
                 </li>
               </ul>
@@ -54,7 +54,7 @@
                     style="text-decoration:none"
                     :style="{color: bodyTextColor}"
                   >
-                    {{ link }}
+                    <span class="text-capitalize">{{ link.replace(/[-]/g, ' ') }}</span>
                   </nuxt-link>
                 </li>
               </ul>
@@ -64,15 +64,27 @@
         <v-col cols="6">
           <v-row
             justify="end"
-            align="center"
+            align="end"
+            class="text-right"
           >
-            <li
-              v-for="social in socialMedia"
-              :key="social.name"
-              class="px-3"
-            >
-              <img :src="social.icon">
-            </li>
+            <v-col cols="4">
+              <h3
+                :style="{color: bodyTextColor}"
+                style="padding-right:56px;"
+              >
+                Follow Us
+              </h3>
+            </v-col>
+            <v-col cols="12">
+              <li
+                v-for="social in socialMedia"
+                :key="social.name"
+                style="display:inline"
+                class="px-3"
+              >
+                <img :src="social.icon">
+              </li>
+            </v-col>
           </v-row>
         </v-col>
         <nuxt-link
@@ -86,12 +98,34 @@
     <v-footer
       v-else
       :color="backgroundColor"
-      class="pa-0"
+      class="pa-0 pt- pb-4"
     >
       <FooterDropdown
         :background-color="backgroundColor"
         :menus="[{title: 'Company', links: companyLinks}, {title: 'Customer Service', links: customerServiceLinks}]"
       />
+      <v-container class="px-7">
+        <v-row
+          justify="end"
+          align="center"
+        >
+          <v-col cols="12">
+            <h3 :style="{color: bodyTextColor}">
+              Follow Us
+            </h3>
+          </v-col>
+          <v-col cols="12">
+            <li
+              v-for="social in socialMedia"
+              :key="social.name"
+              style="display:inline"
+              class="px-3"
+            >
+              <img :src="social.icon">
+            </li>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-footer>
     <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
       <v-text-field
@@ -127,4 +161,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h3 {
+  font-family: "Pacifico", cursive;
+  font-size: 1.2em;
+}
 </style>
