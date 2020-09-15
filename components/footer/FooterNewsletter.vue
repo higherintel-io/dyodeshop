@@ -10,6 +10,7 @@
       <v-col
         cols="12"
         md="10"
+        class="px-6"
       >
         <h2
           class="text-center"
@@ -21,19 +22,24 @@
           align="center"
           justify="center"
         >
-          <v-col cols="6">
+          <v-col
+            cols="12"
+            md="6"
+          >
             <span
               class="text-caption"
               :style="{color: bodyTextColor}"
             >{{ bodyText }}</span>
           </v-col>
           <v-col
-            cols="6"
+            cols="12"
+            md="6"
             class=""
           >
             <v-row align="center">
               <v-col
-                cols="9"
+                cols="8"
+                md="9"
                 class="pr-0"
               >
                 <v-text-field
@@ -44,7 +50,11 @@
                   :placeholder="placeholderText"
                 />
               </v-col>
-              <v-col cols="3">
+              <v-col
+                cols="4"
+                md="3"
+                class="pr-6"
+              >
                 <v-btn
                   block
                   tile

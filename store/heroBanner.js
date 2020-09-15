@@ -3,7 +3,8 @@ import { make } from 'vuex-pathify'
 const state = () => ({
   title: 'Title Goes Here',
   tagline: 'Tagline goes here',
-  backgroundImage: 'https://res.cloudinary.com/higherintel/image/upload/v1599867755/dyode/Hero_Image_1.webp',
+  textColor: '#fff',
+  backgroundImage: 'https://res.cloudinary.com/higherintel/image/upload/v1599867755/dyode/Hero_Image_1.png',
   buttonText: 'Shop now!',
   buttonBackgroundColor: '#000',
   buttonTextColor: '#fff'

@@ -1,5 +1,5 @@
 <template>
-  <div style="width:100%;">
+  <v-layout style="width:100%;">
     <v-app-bar
       :color="backgroundColor"
       :height="height"
@@ -49,7 +49,7 @@
         label="height"
       />
     </SettingsModifier>
-  </div>
+  </v-layout>
 </template>
 
 <script>

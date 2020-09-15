@@ -13,8 +13,13 @@
             style="min-height:400px;max-width:100%"
           >
             <v-col cols="12">
-              <h1>{{ title }}</h1>
-              <h2 class="hero-tagline">
+              <h1 :style="{color: textColor}">
+                {{ title }}
+              </h1>
+              <h2
+                class="hero-tagline"
+                :style="{color: textColor}"
+              >
                 {{ tagline }}
               </h2>
               <v-btn :color="buttonBackgroundColor">
@@ -37,6 +42,12 @@
         background-color="white"
         outlined
         label="Tagline"
+      />
+      <v-text-field
+        v-model="textColor"
+        background-color="white"
+        label="Headline text color"
+        outlined
       />
       <v-text-field
         v-model="buttonBackgroundColor"
@@ -71,7 +82,8 @@ export default {
     backgroundImage: sync('heroBanner/backgroundImage'),
     buttonBackgroundColor: sync('heroBanner/buttonBackgroundColor'),
     buttonText: sync('heroBanner/buttonText'),
-    buttonTextColor: sync('heroBanner/buttonTextColor')
+    buttonTextColor: sync('heroBanner/buttonTextColor'),
+    textColor: sync('heroBanner/textColor')
   }
 }
 </script>

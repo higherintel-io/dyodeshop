@@ -37,4 +37,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-card__actions > .v-btn.v-btn {
+  font-family: "Pacifico", cursive !important;
+  text-transform: capitalize;
+  font-size: 1.6em;
+}
 </style>

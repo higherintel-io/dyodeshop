@@ -5,6 +5,8 @@
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
+      disable-resize-watcher
+      stateless
       fixed
       app
     >
@@ -30,23 +32,6 @@
     <v-main>
       <nuxt />
     </v-main>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light>
-              mdi-repeat
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
     <InstagramFeed />
     <FooterNewsletter />
     <MainFooter />
@@ -103,5 +88,9 @@ p {
 }
 body .v-application h2.hero-tagline {
   font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+}
+div#__layout {
+  overflow: hidden;
 }
 </style>
