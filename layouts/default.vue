@@ -6,29 +6,25 @@
       :mini-variant="miniVariant"
       :clipped="clipped"
       disable-resize-watcher
-      stateless
       fixed
       app
     >
       <v-list>
         <v-list-item
-          v-for="(item, i) in items"
+          v-for="(item, i) in links"
           :key="i"
-          :to="item.to"
+          :to="`/shop/${item}`"
           router
           exact
         >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
+            <v-list-item-title v-text="item" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
-    <MainNavigation />
+    <MainNavigation @toggle-nav="drawer = !drawer" />
     <v-main>
       <nuxt />
     </v-main>
@@ -39,6 +35,7 @@
 </template>
 
 <script>
+import { get } from 'vuex-pathify'
 export default {
   async middleware ({ store, app }) {
     await store.dispatch('getDesignSettings')
@@ -65,6 +62,9 @@ export default {
       rightDrawer: false,
       title: 'Vuetify.js'
     }
+  },
+  computed: {
+    links: get('MainNavigation/links')
   }
 }
 </script>

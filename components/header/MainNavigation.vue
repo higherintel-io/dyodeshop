@@ -4,7 +4,12 @@
       :color="backgroundColor"
       :height="height"
     >
-      <v-app-bar-nav-icon />
+      <v-app-bar-nav-icon
+        class="hidden-md-and-up"
+        color="white"
+        large
+        @click="toggleSidebar"
+      />
 
       <v-toolbar-title>
         <nuxt-link to="/">
@@ -19,13 +24,21 @@
           v-for="n in links"
           :key="n"
           text
-          class="overline font-weight-black"
+          class="overline font-weight-black hidden-md-and-down"
           exact
           :to="`/shop/${n}`"
           nuxt
           :color="textColor"
         >
           {{ n }}
+        </v-btn>
+        <v-btn
+          icon
+          to="/shop/cart"
+        >
+          <v-icon color="white">
+            mdi-cart-outline
+          </v-icon>
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -62,6 +75,11 @@ export default {
     textColor: sync('MainNavigation/textColor'),
     height: sync('MainNavigation/height'),
     links: sync('MainNavigation/links')
+  },
+  methods: {
+    toggleSidebar () {
+      this.$emit('toggle-nav')
+    }
   }
 }
 </script>
@@ -70,5 +88,11 @@ export default {
 .v-toolbar__title img {
   width: 55px;
   margin-top: 7px;
+}
+@media screen and (max-width: 1024px) {
+  .v-toolbar__title {
+    width: 100%;
+    text-align: center;
+  }
 }
 </style>
