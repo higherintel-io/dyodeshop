@@ -1,16 +1,22 @@
 <template>
-  <div style="width:100%;">
+  <div
+    style="width:100%;"
+    class="mb-3"
+  >
     <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-card
       flat
       tile
     >
-      <v-img :src="backgroundImage">
+      <v-img
+        :src="backgroundImage"
+        contain
+      >
         <v-col cols="12">
           <v-row
             align="center"
             justify="center"
-            style="min-height:400px;max-width:100%"
+            :style="[$vuetify.breakpoint.smAndDown ? {'min-height':0 } : {'min-height':'400px'}]"
           >
             <v-col cols="12">
               <h1 :style="{color: textColor}">

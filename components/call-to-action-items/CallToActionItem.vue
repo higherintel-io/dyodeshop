@@ -1,13 +1,15 @@
 <template>
   <v-card :to="item.link">
-    <v-img :src="item.image" />
-
+    <v-img
+      :src="item.image"
+      :height="index === 2 && $vuetify.breakpoint.smAndDown ? 167 : $vuetify.breakpoint.mdAndUp ? 400 : 240"
+    />
     <v-card-actions class="pa-0">
       <v-btn
         block
         tile
         :color="buttonBackgroundColor"
-        height="110"
+        :height="$vuetify.breakpoint.smAndDown ? 50 : 110"
         :to="item.link"
       >
         <span :style="{color: `${ctaFontColor}`}">{{ item.title }}</span>
@@ -31,6 +33,10 @@ export default {
     ctaFontColor: {
       type: String,
       default: '#fff'
+    },
+    index: {
+      type: Number,
+      default: null
     }
   }
 }

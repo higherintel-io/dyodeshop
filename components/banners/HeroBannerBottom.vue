@@ -1,5 +1,8 @@
 <template>
-  <div style="width:100%">
+  <div
+    style="width:100%"
+    class="my-5"
+  >
     <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-card
       flat

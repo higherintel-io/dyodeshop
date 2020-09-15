@@ -1,18 +1,19 @@
 <template>
-  <div class="container">
+  <div class="container mb-4">
     <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-row
       align="center"
       justify="center"
     >
       <v-col
-        v-for="cta in ctas"
+        v-for="(cta, i) in ctas"
         :key="cta.title"
-        cols="12"
+        :cols="i === 2 ? 12 : 6"
         md="4"
       >
         <CallToActionItem
           :item="cta"
+          :index="i"
           :button-background-color="buttonBackgroundColor"
           :cta-font-color="ctaFontColor"
         />

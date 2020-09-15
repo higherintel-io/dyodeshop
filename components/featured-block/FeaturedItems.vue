@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-6">
     <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-sheet
       class="mx-auto"

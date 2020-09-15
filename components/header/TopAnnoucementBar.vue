@@ -8,7 +8,7 @@
     >
       <p
         :style="{color: `${textColor}`}"
-        class="mb-0"
+        class="mx-auto my-auto"
       >
         {{ text }}
       </p>
