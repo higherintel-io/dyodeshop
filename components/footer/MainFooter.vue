@@ -1,7 +1,10 @@
 <template>
   <div style="width:100%;">
     <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
-    <v-footer :color="backgroundColor">
+    <v-footer
+      v-if="$vuetify.breakpoint.smAndUp"
+      :color="backgroundColor"
+    >
       <v-row justify="space-between">
         <v-col cols="6">
           <v-row
@@ -79,6 +82,16 @@
           Site Manager
         </nuxt-link>
       </v-row>
+    </v-footer>
+    <v-footer
+      v-else
+      :color="backgroundColor"
+      class="pa-0"
+    >
+      <FooterDropdown
+        :background-color="backgroundColor"
+        :menus="[{title: 'Company', links: companyLinks}, {title: 'Customer Service', links: customerServiceLinks}]"
+      />
     </v-footer>
     <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
       <v-text-field
