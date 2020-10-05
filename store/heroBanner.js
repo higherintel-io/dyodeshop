@@ -4,7 +4,7 @@ const state = () => ({
   title: 'Title Goes Here',
   tagline: 'Tagline goes here',
   textColor: '#fff',
-  backgroundImage: 'https://res.cloudinary.com/higherintel/image/upload/v1599867755/dyode/Hero_Image_1.png',
+  backgroundImage: 'https://res.cloudinary.com/higherintel/image/upload/v1599867755/dyode/Hero_Image_1.jpg',
   buttonText: 'Shop now!',
   buttonBackgroundColor: '#000',
   buttonTextColor: '#fff'

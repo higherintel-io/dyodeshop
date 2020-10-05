@@ -4,19 +4,19 @@ const state = () => ({
   title: 'New Arrivals',
   products: [
     {
-      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.webp',
+      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.png',
       name: 'product title',
       shortDesc: 'Womans t-shirt',
       price: '19.99'
     },
     {
-      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.webp',
+      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.png',
       name: 'product title',
       shortDesc: 'Womans t-shirt',
       price: '19.99'
     },
     {
-      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.webp',
+      image: 'https://res.cloudinary.com/higherintel/image/upload/v1599924299/dyode/Product_Image_1.png',
       name: 'product title',
       shortDesc: 'Womans t-shirt',
       price: '19.99'
