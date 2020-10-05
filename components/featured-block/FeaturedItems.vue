@@ -1,46 +1,26 @@
 <template>
   <div class="mb-6">
-    <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-sheet
       class="mx-auto"
       elevation="0"
       max-width="1000"
     >
       <v-card-title class="d-block text-center">
-        <h2>{{ title }}</h2>
+        <v-skeleton-loader type="text" />
       </v-card-title>
-      <v-slide-group show-arrows>
-        <v-slide-item
-          v-for="(product,i) in products"
+      <v-row>
+        <v-col
+          v-for="i in 12"
           :key="i"
-          v-slot:default="{ active }"
+          cols="2"
         >
-          <v-card
-            flat
-            class="ma-4"
-            :width="$vuetify.breakpoint.smAndUp ? 200 : 140"
-          >
-            <v-row
-              class="fill-height"
-              align="center"
-              justify="center"
-            >
-              <FeaturedItem
-                :product="product"
-                :active="active"
-              />
-              <v-scale-transition>
-                <v-icon
-                  v-if="active"
-                  color="white"
-                  size="48"
-                  v-text="'mdi-close-circle-outline'"
-                />
-              </v-scale-transition>
-            </v-row>
-          </v-card>
-        </v-slide-item>
-      </v-slide-group>
+          <v-skeleton-loader
+            type="card"
+            boilerplate
+          />
+          <v-row />
+        </v-col>
+      </v-row>
     </v-sheet>
   </div>
 </template>

@@ -6,37 +6,26 @@
       flat
     >
       <v-card-title class="d-block text-center">
-        <h2>{{ headline }}</h2>
+        <h2>
+          <v-skeleton-loader
+            style="margin:auto"
+            type="heading"
+          />
+        </h2>
       </v-card-title>
       <v-row
         align="center"
         justify="space-around"
       >
         <v-col
-          v-for="(post, i) in posts"
+          v-for="i in 5"
           :key="i"
           cols="2"
         >
-          <v-card>
-            <v-img :src="post.image" />
-          </v-card>
+          <v-skeleton-loader type="card, list-item" />
         </v-col>
       </v-row>
     </v-card>
-    <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
-      <v-text-field
-        v-model="instagramUsername"
-        outlined
-        background-color="white"
-        label="instagram username"
-      />
-      <v-text-field
-        v-model="headline"
-        outlined
-        background-color="white"
-        label="Section Headline"
-      />
-    </SettingsModifier>
   </div>
 </template>
 
@@ -57,4 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.v-skeleton-loader__heading.v-skeleton-loader__bone {
+  margin: auto;
+}
 </style>

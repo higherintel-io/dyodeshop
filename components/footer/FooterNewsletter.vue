@@ -1,42 +1,19 @@
 <template>
   <div style="width:100%;">
-    <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-row
       align="center"
       justify="center"
-      style="min-height:285px"
-      :style="{backgroundColor: `${backgroundColor}`}"
+      style="min-height:285px;background:#f7f7f7"
     >
       <v-col
         cols="12"
         md="10"
         class="px-6"
       >
-        <h2
-          class="text-center d-flex align-center justify-center"
-          :style="{color: bodyTextColor}"
-        >
-          <img
-            class="mr-2"
-            width="36"
-            height="36"
-            src="https://res.cloudinary.com/higherintel/image/upload/v1600190101/dyode/mail-icon.png"
-          >
-          {{ headline }}
-        </h2>
         <v-row
           align="center"
           justify="center"
         >
-          <v-col
-            cols="12"
-            md="6"
-          >
-            <span
-              class="text-caption"
-              :style="{color: bodyTextColor}"
-            >{{ bodyText }}</span>
-          </v-col>
           <v-col
             cols="12"
             md="6"
@@ -47,72 +24,12 @@
                 cols="8"
                 md="9"
                 class="pr-0"
-              >
-                <v-text-field
-                  solo
-                  style="min-height:0!important"
-                  height="44"
-                  hide-details="true"
-                  :placeholder="placeholderText"
-                />
-              </v-col>
-              <v-col
-                cols="4"
-                md="3"
-                class="pr-6"
-              >
-                <v-btn
-                  block
-                  tile
-                  outlined
-                  height="44"
-                  :color="buttonBorderColor"
-                >
-                  Subscribe
-                </v-btn>
-              </v-col>
+              />
             </v-row>
           </v-col>
         </v-row>
       </v-col>
     </v-row>
-    <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
-      <v-text-field
-        v-model="headline"
-        outlined
-        label="Headline"
-      />
-      <v-text-field
-        v-model="bodyText"
-        outlined
-        label="Body Text"
-      />
-      <v-text-field
-        v-model="placeholderText"
-        outlined
-        label="Input placeholder text"
-      />
-      <v-text-field
-        v-model="backgroundColor"
-        outlined
-        label="background color"
-      />
-      <v-text-field
-        v-model="buttonBackgroundColor"
-        outlined
-        label="Button Background Color"
-      />
-      <v-text-field
-        v-model="buttonBorderColor"
-        outlined
-        label="Button border color"
-      />
-      <v-text-field
-        v-model="buttonTextColor"
-        outlined
-        label="Button text color"
-      />
-    </SettingsModifier>
   </div>
 </template>
 

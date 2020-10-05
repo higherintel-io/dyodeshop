@@ -1,9 +1,8 @@
 <template>
   <div style="width:100%;">
-    <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-footer
       v-if="$vuetify.breakpoint.smAndUp"
-      :color="backgroundColor"
+      color="#ffffff"
     >
       <v-row justify="space-between">
         <v-col cols="6">
@@ -14,7 +13,7 @@
             <v-col cols="6">
               <p
                 class="headline mb-0"
-                :style="{color: bodyTextColor}"
+                style="color:#666"
               >
                 Customer Service
               </p>
@@ -22,13 +21,12 @@
                 <li
                   v-for="(link, i) in customerServiceLinks"
                   :key="i"
-                  :style="{color: bodyTextColor}"
-                  style="list-style:none"
+                  style="list-style:none;color:#666"
                 >
                   <nuxt-link
                     :to="`/pages/${link}`"
                     style="text-decoration:none"
-                    :style="{color: bodyTextColor}"
+                    :style="{color: '#666'}"
                   >
                     <span class="text-capitalize">{{ link.replace(/[-]/g, ' ') }}</span>
                   </nuxt-link>
@@ -38,7 +36,7 @@
             <v-col cols="6">
               <p
                 class="headline mb-0"
-                :style="{color: bodyTextColor}"
+                :style="{color: '#666'}"
               >
                 Company
               </p>
@@ -46,13 +44,13 @@
                 <li
                   v-for="(link, i) in companyLinks"
                   :key="i"
-                  :style="{color: bodyTextColor}"
+                  :style="{color: '#666'}"
                   style="list-style:none"
                 >
                   <nuxt-link
                     :to="`/pages/${link}`"
                     style="text-decoration:none"
-                    :style="{color: bodyTextColor}"
+                    :style="{color: '#666'}"
                   >
                     <span class="text-capitalize">{{ link.replace(/[-]/g, ' ') }}</span>
                   </nuxt-link>
@@ -87,12 +85,6 @@
             </v-col>
           </v-row>
         </v-col>
-        <nuxt-link
-          to="/admin/store-manager"
-          style="text-decoration:none"
-        >
-          Site Manager
-        </nuxt-link>
       </v-row>
     </v-footer>
     <v-footer
@@ -127,20 +119,6 @@
         </v-row>
       </v-container>
     </v-footer>
-    <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
-      <v-text-field
-        v-model="backgroundColor"
-        outlined
-        background-color="white"
-        label="Background Color"
-      />
-      <v-text-field
-        v-model="bodyTextColor"
-        outlined
-        background-color="white"
-        label="Body text color"
-      />
-    </SettingsModifier>
   </div>
 </template>
 

@@ -1,46 +1,11 @@
 <template>
-  <div>
-    <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
-    <v-row
-      align="center"
-      justify="center"
-      :style="{backgroundColor, height:`${height}px`}"
-    >
-      <p
-        :style="{color: `${textColor}`}"
-        class="mx-auto my-auto"
-      >
-        {{ text }}
-      </p>
-    </v-row>
-
-    <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
-      <v-text-field
-        v-model="backgroundColor"
-        background-color="white"
-        outlined
-        label="Background Color"
-      />
-      <v-text-field
-        v-model="height"
-        background-color="white"
-        outlined
-        label="height"
-      />
-      <v-text-field
-        v-model="text"
-        background-color="white"
-        outlined
-        label="text"
-      />
-      <v-text-field
-        v-model="textColor"
-        background-color="white"
-        outlined
-        label="Text Color"
-      />
-    </SettingsModifier>
-  </div>
+  <v-row
+    align="center"
+    justify="center"
+    style="background-color:#f7f7f7;min-height:75px"
+  >
+    <v-skeleton-loader type="heading" />
+  </v-row>
 </template>
 
 <script>

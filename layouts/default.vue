@@ -72,10 +72,10 @@ export default {
 h1,
 h2,
 .v-application .headline {
-  font-family: "Pacifico", cursive !important;
+  font-family: "Lato", sans-serif !important;
 }
 button.v-btn.v-btn--block.v-btn--depressed.v-btn--flat.v-btn--outlined.v-btn--tile.theme--light.v-size--default {
-  font-family: "Pacifico", cursive;
+  font-family: "Lato", sans-serif !important;
   text-transform: capitalize;
 }
 

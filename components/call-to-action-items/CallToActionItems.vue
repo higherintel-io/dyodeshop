@@ -1,38 +1,23 @@
 <template>
   <div class="container mb-4">
-    <ComponentSettingsHeader v-if="isAdmin && $route.name === 'admin-store-manager'" />
     <v-row
       align="center"
       justify="center"
     >
       <v-col
-        v-for="(cta, i) in ctas"
-        :key="cta.title"
-        :cols="i === 2 ? 12 : 6"
-        md="4"
+        v-for="i in 4"
+        :key="i"
+        cols="3"
+        md="3"
       >
-        <CallToActionItem
-          :item="cta"
-          :index="i"
-          :button-background-color="buttonBackgroundColor"
-          :cta-font-color="ctaFontColor"
-        />
+        <nuxt-link to="/about">
+          <v-skeleton-loader
+            type="card"
+            boilerplate
+          />
+        </nuxt-link>
       </v-col>
     </v-row>
-    <SettingsModifier v-if="isAdmin && $route.name === 'admin-store-manager'">
-      <v-text-field
-        v-model="buttonBackgroundColor"
-        outlined
-        background-color="white"
-        label="Button background color"
-      />
-      <v-text-field
-        v-model="ctaFontColor"
-        outlined
-        background-color="white"
-        label="Button Font Color"
-      />
-    </SettingsModifier>
   </div>
 </template>
 
